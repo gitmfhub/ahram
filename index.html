@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>تطبيقي</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/ahram.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="./assets/ahram.jpg">
+
+    <!-- الخط المخصص (Cairo) -->
+    <style>
+        @font-face {
+            font-family: 'Cairo';
+            src: url('./assets/cairo.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+    </style>
+
+    <!-- تحسينات PWA (اختياري) -->
+    <link rel="manifest" href="./manifest.json">
+</head>
+<body>
+    <!-- محتوى الصفحة -->
+    <h1>مرحباً بك!</h1>
+    <p>هذه صفحة مخصصة للهواتف.</p>
+
+    <script>
+        // إضافة Service Worker (اختياري)
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+                .then(() => console.log('Service Worker مسجل!'))
+                .catch(err => console.log('خطأ: ', err));
+        }
+    </script>
+</body>
+</html>
